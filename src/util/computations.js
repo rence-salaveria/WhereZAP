@@ -224,39 +224,40 @@ function computeCaseValues(aValues) {
   return "".concat((voltageL1 + 1) / 2).concat((voltageL2 + 1) / 2).concat((ground + 1) / 2).concat((currentL1 + 1) / 2).concat((currentL2 + 1) / 2).concat((power + 1) / 2).concat((resistance + 1) / 2)
 }
 
-function determineCase(caseString) {
+function determineCase(caseString, voltage, current) {
   switch(caseString) {
     case '0000000': 
       return 'No Fault'
-      break;
 
     case '11011010':
       return 'Line 1 to 2'
-      break;
 
     case '10110101':
       return 'Line 1 to Ground'
-      break;
 
     case '01101101':
       return 'Line 2 to Ground'
-      break;
 
     case '01000001':
       return 'Line 1 Open'
-      break;
 
     case '10000001':
       return 'Line 2 Open'
-      break;
 
     case '00100101':
       return 'Line 1 and 2 Open'
-      break;
 
     default: 
-      return 'Fault not defined'
-      break;
+      if (voltage <= 200) {
+        return 'Open-Circuit Fault'
+      } else if (current <= 0) {
+        return 'Open-Circuit Fault'
+      } else if (current >= 100){
+        return 'Short-Circuit Fault'
+      } else if (computeGroundVoltage(voltage) >= 200) {
+        return 'Line-Ground Fault'
+      } 
+
   }
 }
 
