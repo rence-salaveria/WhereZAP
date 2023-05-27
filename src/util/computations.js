@@ -269,7 +269,7 @@ export function generateResults(voltage, current) {
   const groundVoltage = computeGroundVoltage(voltage)
   const values = computeValues(voltage, groundVoltage, current, power, resistance)
   const caseString = computeCaseValues(values)
-  const caseResult = determineCase(caseString)
+  const caseResult = determineCase(caseString, voltage, current)
 
   return {
     resistance,
