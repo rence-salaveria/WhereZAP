@@ -14,7 +14,6 @@ export default function DataTableRow({
       <Table.Cell>{data.voltage}</Table.Cell>
       <Table.Cell>{data.current}</Table.Cell>
       <Table.Cell>{data.resistance}</Table.Cell>
-      <Table.Cell>{data.groundVoltage}</Table.Cell>
       <Table.Cell>{data.power}</Table.Cell>
       <Table.Cell>{data.faultType}</Table.Cell>
       <Table.Cell>
