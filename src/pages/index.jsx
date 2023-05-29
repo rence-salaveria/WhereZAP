@@ -82,7 +82,6 @@ export default function Home() {
     'Voltage (V)',
     'Current (A)',
     'Resistance',
-    'Ground Voltage',
     'Power',
     'Type of Fault',
     '',
