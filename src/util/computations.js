@@ -252,7 +252,7 @@ function determineCase(caseString, voltage, current) {
         return 'Open-Circuit Fault'
       } else if (current <= 0) {
         return 'Open-Circuit Fault'
-      } else if (current >= 100){
+      } else if (current >= 4){
         return 'Short-Circuit Fault'
       } else if (computeGroundVoltage(voltage) >= 200) {
         return 'Line-Ground Fault'
