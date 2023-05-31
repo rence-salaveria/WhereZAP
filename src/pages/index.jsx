@@ -194,6 +194,7 @@ export default function Home() {
 
       <div className='mt-[1rem] mb-[1rem]'>
         <h1 className='text-2xl font-bold'>Data Records</h1>
+        <p className='text-lg'>Disclaimer: This software only identifies Open-Circuit Fault, Short-Circuit Fault, Line-Ground Fault, and focuses only on the motor loads inside the dwelling unit.</p>
       </div>
 
       {data.length !== 0 ? (
